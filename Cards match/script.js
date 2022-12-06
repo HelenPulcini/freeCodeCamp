@@ -98,9 +98,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const grid = document.querySelector(".grid")
     const resultDisplay = document.querySelector("#result")
-    let cardsChosen = []
-    let cardsChosenId = []
-    let cardsWon = []
+    let carteChosen = []
+    let carteChosenId = []
+    let carteWon = []
 
     function createBoard() {
         for (let i = 0; i < cardArray.length; i++) {
@@ -114,13 +114,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function checkForMatch() {
         let carte = document.querySelectorAll("img")
-        const optionOneId = cardsChosenId[0]
-        const optionTwoId = cardsChosenId[1]
-        if (cardsChosen[0] === cardsChosen[1]) {
+        const optionOneId = carteChosenId[0]
+        const optionTwoId = carteChosenId[1]
+        if (carteChosenId[0] === carteChosenId[1]) {
             alert("You found a match!")
             carte[optionOneId].setAttribute("src", "/Cards match/Images/white.png")
             carte[optionTwoId].setAttribute("src", "/Cards match/Images/white.png")
-            cardsWon.push(cardsChosen)
+            carteWon.push(carteChosen)
         }
         else {
             carte[optionOneId].setAttribute("src", "/Cards match/Images/blank.png")
@@ -128,28 +128,23 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Sorry, Try again!")
         }
 
-        cardsChosen = []
-        cardsChosenId = []
-        resultDisplay.innerHTML = cardsWon
-        if (cardsWon.length === cardArray.length / 2) {
+        carteChosen = []
+        carteChosenId = []
+        resultDisplay.innerHTML = carteWon.length
+        if (carteWon.length === cardArray.length / 2) {
             resultDisplay.innerHTML = "Congratulations!!!"
-
         }
-
-
     }
 
     function flipCard() {
         let cardId = this.getAttribute("data-id")
-        cardsChosen.push(cardArray[cardId].name)
-        cardsChosenId.push(cardId)
+        carteChosen.push(cardArray[cardId].name)
+        carteChosenId.push(cardId)
         this.setAttribute("src", cardArray[cardId].img)
-        if (cardsChosen.length === 2) {
+        if (carteChosen.length === 2) {
             setTimeout(checkForMatch, 500)
         }
-
     }
-
 
     createBoard()
 

@@ -1,8 +1,29 @@
+body {
+    background-color: rgb(112, 112, 197);
+    margin: 8% 10% 0;
+}
+
 .grid {
+    margin: auto; /*center the div in the body*/
     display: flex;
     flex-wrap: wrap;
     height: 500px;
-    width: 400px;
+    width: 500px;
+    gap: 10px; /*gives a bit of space between the images*/
+
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    box-shadow: 10px 10px 10px rgb(76, 22, 126);
+    border-radius: 5px;
+}
+
+h3 {
+    font-size: 2em;
+    color: rgb(68, 11, 121);
+    left: 20%;
 }
 
 
