@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    padding: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    min-width:max-content;
+}
+
+input {
+    padding: 0 1em;
+    width: 100%;
+    box-sizing: border-box; /*this includes padding within the 100% width, otherwise it overflows*/
+}
+
+button {
+    color: white;
+    background-color: #5f9341;
+    padding: 0.5em 1em;
+    margin-top: 1vw;
+    border: none;
+    font-weight: bolder;
+    font-size: 0.9em;
+}
+
+ul, li ,a {
+    list-style: none;
+    color: #5f9341;
+    padding-left: 0;
+}
