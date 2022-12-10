@@ -1,9 +1,17 @@
+body {
+    background-image: url(/Snake/ashley-kruse-GtmWfDegVDg-unsplash.jpg);
+    background-size: cover;
+}
+
 .grid {
-    width: 200px;
-    height: 200px;
+    width: 400px;
+    height: 400px;
     display: flex;
     flex-wrap: wrap;
-    border-style: solid;
+    border: solid 5px rgba(18, 100, 100);
+    margin: 10% auto 2%;
+    background-color: rgba(18, 100, 100, 0.445);
+    box-sizing: content-box; /*just to remind you that if you add any border to the box or snake/apple, it will affect the direction's proportion on js*/
 }
 
 .grid div {
@@ -11,10 +19,38 @@
     height: 20px;
 }
 
+.score {
+    background-color: rgba(250, 235, 215, 0.295);
+    font-size: 4em;
+    font-weight: 900;
+    color: aqua;
+    width: fit-content;
+    border-radius: 10px;
+    margin: 1% auto;
+    text-shadow: -2px -2px #fff, 2px 2px #fff, -2px 2px #fff, 2px -2px #fff; /*to create a border around letters just make shadows all around*/
+}
+
+.start {
+    display: block;
+    margin: auto;
+    padding: 0.5em 1em;
+    border-radius: 10px;
+    background-color: aquamarine;
+    font-weight: bolder;
+    font-size: larger;
+    color: rgb(3, 78, 78);
+}
+
 .snake {
+    box-sizing: border-box; /*if you add any border to the box, remember that it needs to stay 20*20 or it messes up with the direction's proportion on js*/
+    border: solid 2px yellowgreen;
     background-color: green;
+    border-radius: 20%;
 }
 
 .apple {
+    border: solid 2px rgb(247, 107, 247);
     background-color: red;
+    border-radius: 50%;
+    box-sizing: border-box; /*if you add any border to the box, remember that it needs to stay 20*20 or it messes up with the direction's proportion on js*/
 }
