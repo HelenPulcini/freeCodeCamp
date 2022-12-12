@@ -99,12 +99,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const grid = document.querySelector(".grid")
     const resultDisplay = document.querySelector("#result")
     let carteChosen = []
-    let carteChosenId = []
-    let carteWon = []
+    let carteChosenIds = []
+    const carteWon = []
 
     function createBoard() {
         for (let i = 0; i < cardArray.length; i++) {
-            let carta = document.createElement("img")
+            const carta = document.createElement("img")
             carta.setAttribute("src", "/Cards match/Images/blank.png")
             carta.setAttribute("data-id", i)
             carta.addEventListener("click", flipCard)
@@ -112,14 +112,32 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function flipCard() {
+        const cardId = this.getAttribute("data-id") // this - refers to whatever you click
+        carteChosen.push(cardArray[cardId].card) // this gets the name of the cards we've given in the cardArray (which we called card :"") and pushes it in the empty carteChosen array
+        carteChosenIds.push(cardId) // this is another empty array in which we will store the ids (0,1,2...) which we will use to check for match
+        this.setAttribute("src", cardArray[cardId].img)
+        if (carteChosen.length === 2) {  //when 2 cards are in the array we want the checkForMatch function to kick in
+            setTimeout(checkForMatch, 500)
+        }
+    }
+
+
     function checkForMatch() {
         let carte = document.querySelectorAll("img")
-        const optionOneId = carteChosenId[0]
-        const optionTwoId = carteChosenId[1]
-        if (carteChosenId[0] === carteChosenId[1]) {
+        const optionOneId = carteChosenIds[0]
+        const optionTwoId = carteChosenIds[1]
+        if (optionOneId === optionTwoId) {
+            carte[optionOneId].setAttribute("src", "/Cards match/Images/blank.png")
+            carte[optionTwoId].setAttribute("src", "/Cards match/Images/blank.png")
+            alert("You have clicked the same card")
+        }
+        if (carteChosen[0] === carteChosen[1] && optionOneId != optionTwoId) {  //the && is to avoid that clicking the same card gives you a match
             alert("You found a match!")
             carte[optionOneId].setAttribute("src", "/Cards match/Images/white.png")
             carte[optionTwoId].setAttribute("src", "/Cards match/Images/white.png")
+            carte[optionOneId].removeEventListener("click", flipCard)
+            carte[optionTwoId].removeEventListener("click", flipCard)
             carteWon.push(carteChosen)
         }
         else {
@@ -129,20 +147,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         carteChosen = []
-        carteChosenId = []
+        carteChosenIds = []
+
         resultDisplay.innerHTML = carteWon.length
+
         if (carteWon.length === cardArray.length / 2) {
             resultDisplay.innerHTML = "Congratulations!!!"
-        }
-    }
-
-    function flipCard() {
-        let cardId = this.getAttribute("data-id")
-        carteChosen.push(cardArray[cardId].name)
-        carteChosenId.push(cardId)
-        this.setAttribute("src", cardArray[cardId].img)
-        if (carteChosen.length === 2) {
-            setTimeout(checkForMatch, 500)
         }
     }
 
