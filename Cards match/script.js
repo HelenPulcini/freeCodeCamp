@@ -106,14 +106,14 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let i = 0; i < cardArray.length; i++) {
             const carta = document.createElement("img")
             carta.setAttribute("src", "/Cards match/Images/blank.png")
-            carta.setAttribute("data-id", i)
+            carta.setAttribute("data-id", i) // this way the id of each img will be 0,1,2,3....
             carta.addEventListener("click", flipCard)
             grid.appendChild(carta)
         }
     }
 
     function flipCard() {
-        const cardId = this.getAttribute("data-id") // this - refers to whatever you click
+        const cardId = this.getAttribute("data-id") // 'this.' refers to whatever you click
         carteChosen.push(cardArray[cardId].card) // this gets the name of the cards we've given in the cardArray (which we called card :"") and pushes it in the empty carteChosen array
         carteChosenIds.push(cardId) // this is another empty array in which we will store the ids (0,1,2...) which we will use to check for match
         this.setAttribute("src", cardArray[cardId].img)
