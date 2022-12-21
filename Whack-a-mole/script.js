@@ -1,45 +1,56 @@
-const square = document.querySelectorAll(".square")
-const mole = document.querySelectorAll(".mole")
-const timeleft = document.querySelectorAll("#timeleft")
-let score = document.querySelectorAll("#score")
+const squares = document.querySelectorAll(".square")
+const mole = document.querySelector(".mole")
+const timeleft = document.querySelector("#timeleft")
+const startBtn = document.querySelector(".start");
+
+let score = document.querySelector("#score")
 let result = 0
 let currentTime = timeleft.innerHTML
+let timerId = null
 
+function startGame() {
+    result = 0
+    score.innerHTML = result
+    moveMole()
+    function countDown() {
+        currentTime--
+        timeleft.innerHTML = currentTime
+    
+        if (currentTime === 0) {
+            clearInterval(countDownTimerId)
+            clearInterval(timerId)
+            alert("GAME OVER! Your final score is " + result)
+            currentTime = 15
+        }
+    }
+    let countDownTimerId = setInterval(countDown, 1000)
+}
 
 function randomSquare() {
-    square.forEach(className =>{
-        className.classList.remove("mole")
+    squares.forEach(square => {
+        square.classList.remove("mole")
     })
-    let randomPosition = square[Math.floor(Math.random()*9)]
+    let randomPosition = squares[Math.floor(Math.random() * 9)]
     randomPosition.classList.add("mole")
 
     hitPosition = randomPosition.id
 }
 
-square.forEach(id=>{
-    id.addEventListener("click",()=>{
+squares.forEach(id => {
+    id.addEventListener("click", () => {
         if (id.id === hitPosition) {
-            result = result +1
+            result++
             score.innerHTML = result
         }
     })
 })
 
 function moveMole() {
-    let timerId = null
     timerId = setInterval(randomSquare, 1000)
 }
 
-moveMole();
+//moveMole();  //if you call the function here and don't have a start btn it will start on load
 
-function countDown() {
-    currentTime--
-    timeleft.innerHTML = currentTime
+startBtn.addEventListener("click", startGame)
 
-    if (currentTime === 0) {
-        clearInterval(timerId)
-        alert("GAME OVER! Your final score is" + result)
-    }
-}
 
-let timerId = setInterval(countDown, 1000)

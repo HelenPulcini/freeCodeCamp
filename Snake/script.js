@@ -64,26 +64,26 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Oh no! You've crashed into yourself. Please restart.")
             return clearInterval(interval)
         }
-    
 
 
-    const tail = currentSnake.pop();
-    squares[tail].classList.remove("snake");
-    currentSnake.unshift(currentSnake[0] + direction);
 
-    if (squares[currentSnake[0]].classList.contains("apple")) {
-        squares[currentSnake[0]].classList.remove("apple")
-        squares[tail].classList.add("snake")
-        currentSnake.push(tail)
-        randomApple()
-        score++
-        scoreDisplay.textContent = score
-        clearInterval(interval)
-        intervalTime = intervalTime * speed
-        interval = setInterval(moveOutcomes, intervalTime)
-    };
-    squares[currentSnake[0]].classList.add("snake")
-}
+        const tail = currentSnake.pop();
+        squares[tail].classList.remove("snake");
+        currentSnake.unshift(currentSnake[0] + direction);
+
+        if (squares[currentSnake[0]].classList.contains("apple")) {
+            squares[currentSnake[0]].classList.remove("apple")
+            squares[tail].classList.add("snake")
+            currentSnake.push(tail)
+            randomApple()
+            score++
+            scoreDisplay.textContent = score
+            clearInterval(interval)
+            intervalTime = intervalTime * speed
+            interval = setInterval(moveOutcomes, intervalTime)
+        };
+        squares[currentSnake[0]].classList.add("snake")
+    }
 
     function randomApple() {
         do {
