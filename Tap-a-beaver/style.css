@@ -17,7 +17,7 @@ body:before {
     left: 0;
     height: 100%;
     width: 100%;
-    background-image: url(/Whack-a-mole/doodle-4181783_1280.png);
+    background-image: url(/Tap-a-beaver/doodle-4181783_1280.png);
     filter: opacity(30%);
     content: "";
 }
@@ -57,7 +57,7 @@ body:before {
     width: 8rem;
     height: 8rem;
     border: 1px solid black;
-    background-image: url(/Whack-a-mole/matteo-badini-bLoEsU3aIlI-unsplash.jpg);
+    background-image: url(/Tap-a-beaver/matteo-badini-bLoEsU3aIlI-unsplash.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -72,7 +72,7 @@ body:before {
 }
 
 .mole {
-    background-image: url(/Whack-a-mole/pngfind.com-mole-png-6501921.png), url(/Whack-a-mole/matteo-badini-bLoEsU3aIlI-unsplash.jpg);
+    background-image: url(/Tap-a-beaver/pngfind.com-mole-png-6501921.png), url(/Tap-a-beaver/matteo-badini-bLoEsU3aIlI-unsplash.jpg);
     background-size: contain, cover;
     background-repeat: no-repeat;
     background-position: center;
