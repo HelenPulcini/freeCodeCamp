@@ -54,3 +54,23 @@ body {
     border-radius: 50%;
     box-sizing: border-box; /*if you add any border to the box, remember that it needs to stay 20*20 or it messes up with the direction's proportion on js*/
 }
+
+.mobile {
+    width: 10vw;
+    display: grid; 
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 5px;
+}
+
+button {
+  height: 5vh;
+  text-align: center;
+  box-sizing: content-box;
+  padding: 5%;
+  background-color: aquamarine;
+  color: rgb(3, 78, 78);
+}

@@ -110,6 +110,36 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // left key
+    function l() {
+        if(snake.dx === 0) {
+          snake.dx = -grid;
+          snake.dy = 0;
+        }
+      }
+
+  // up key
+  function u() {
+    if(snake.dy === 0) {
+      snake.dy = -grid;
+      snake.dx = 0;
+    }
+  }
+
+  // right key 
+  function r() {
+    if(snake.dx === 0) {
+      snake.dx = grid;
+      snake.dy = 0;
+    }
+  }
+  // down key 
+  function d() {
+    if(snake.dy === 0) {
+      snake.dy = grid;
+      snake.dx = 0;
+    }
+  }
     document.addEventListener("keyup", control)
     startBtn.addEventListener("click", startGame)
 
