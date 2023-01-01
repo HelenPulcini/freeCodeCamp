@@ -110,36 +110,32 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // left key
-    function l() {
-        if(snake.dx === 0) {
-          snake.dx = -grid;
-          snake.dy = 0;
-        }
-      }
 
-  // up key
-  function u() {
-    if(snake.dy === 0) {
-      snake.dy = -grid;
-      snake.dx = 0;
-    }
-  }
+    let larr = document.getElementById("larr");
+    larr.addEventListener("click", l => {
+        console.log("left");
+        direction = -1
+    })
 
-  // right key 
-  function r() {
-    if(snake.dx === 0) {
-      snake.dx = grid;
-      snake.dy = 0;
-    }
-  }
-  // down key 
-  function d() {
-    if(snake.dy === 0) {
-      snake.dy = grid;
-      snake.dx = 0;
-    }
-  }
+    let rarr = document.getElementById("rarr");
+    rarr.addEventListener("click", r => {
+        console.log("right");
+        direction = 1
+    })
+
+    let darr = document.getElementById("darr");
+    darr.addEventListener("click", d => {
+        console.log("down");
+        direction = +width
+    })
+
+    let uarr = document.getElementById("uarr");
+    uarr.addEventListener("click", u => {
+        console.log("up");
+        direction = -width
+    })
+
+
     document.addEventListener("keyup", control)
     startBtn.addEventListener("click", startGame)
 

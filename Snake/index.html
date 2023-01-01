@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <link rel="apple-touch-icon" sizes="180x180" href="/Snake/favicon_io/apple-touch-icon.png">
@@ -8,7 +9,7 @@
     <link rel="manifest" href="/Snake/favicon_io/site.webmanifest">
 
     <script src="https://kit.fontawesome.com/f97819ca2f.js" crossorigin="anonymous"></script>
-    
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,9 +17,10 @@
 
     <title>Snake</title>
 </head>
+
 <body>
-    
-    <div class="grid">   <!--you need to add divs according to how big you want your grid to be - e.g 10*10 = 100divs - 20*20 = 400divs-->
+    <div class="grid">
+        <!--you need to add divs according to how big you want your grid to be - e.g 10*10 = 100divs - 20*20 = 400divs-->
         <div></div>
         <div></div>
         <div></div>
@@ -420,14 +422,23 @@
         <div></div>
         <div></div>
     </div>
-    <div class="mobile">
-        <button onclick="l()" id="l"><i class="fa-solid fa-caret-left"></i></button>
-        <button onclick="r()" id="r"><i class="fa-solid fa-caret-right"></i></button>
-        <button onclick="u()" id="u"><i class="fa-solid fa-caret-up"></i></button>
-        <button onclick="d()" id="d"><i class="fa-solid fa-caret-down"></i></button>
+    <div class="container">
+        <div class="instruction">
+            <p>Control the direction with your keyboard <i class="fa-solid fa-chevron-up"></i><i
+                    class="fa-solid fa-chevron-down"></i><i class="fa-solid fa-chevron-left"></i><i
+                    class="fa-solid fa-chevron-right"></i> </p>
+            <p>or with the buttons &#8681</p>
+        </div>
+        <div class="mobile">
+            <button id="uarr"><i class="fa-solid fa-caret-up"></i></button>
+            <button id="rarr"><i class="fa-solid fa-caret-right"></i></button>
+            <button id="darr"><i class="fa-solid fa-caret-down"></i></button>
+            <button id="larr"><i class="fa-solid fa-caret-left"></i></button>
+        </div>
+        <div class="score">Score: <span>0</span></div>
+        <button class="start">Start/Restart</button>
     </div>
-    <div class="score">Score: <span>0</span></div>
-    <button class="start">Start/Restart</button>
     <script src="/Snake/script.js"></script>
 </body>
+
 </html>

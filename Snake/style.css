@@ -1,6 +1,8 @@
 body {
     background-image: url(/Snake/ashley-kruse-GtmWfDegVDg-unsplash.jpg);
     background-size: cover;
+    margin: 0;
+    padding: 0;
 }
 
 .grid {
@@ -9,7 +11,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     border: solid 5px rgba(18, 100, 100);
-    margin: 10% auto 2%;
+    margin: 2.5% auto;
     background-color: rgba(18, 100, 100, 0.445);
     box-sizing: content-box; /*just to remind you that if you add any border to the box or snake/apple, it will affect the direction's proportion on js*/
 }
@@ -60,17 +62,64 @@ body {
     display: grid; 
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
     gap: 5px;
 }
 
-button {
-  height: 5vh;
+.mobile button {
+  height: 4rem;
+  width: 4rem;
   text-align: center;
   box-sizing: content-box;
   padding: 5%;
   background-color: aquamarine;
   color: rgb(3, 78, 78);
+  border-radius: 10px;
+
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.instruction {
+    padding-bottom: 2rem;
+}
+
+.instruction p {
+    width: fit-content;
+    margin: auto;
+    background-color: rgba(5, 5, 5, 0.986);
+    color: aqua;
+    font-size: 1.5rem;
+}
+
+
+.instruction p i {
+    padding: 0 0.5rem;
+}
+
+@media screen and (max-width: 500px) {
+
+    .instruction {
+        display: none;
+    }
+
+    .container {
+        display: block;
+    }
+
+    .mobile {
+        width: fit-content;
+        margin: auto;
+        padding: 2.5%
+    }
+ 
+    .score {
+        font-size: 3rem;
+        padding-top: 3%;
+    }
+
 }
