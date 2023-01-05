@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const carta = document.createElement("img")
             carta.setAttribute("src", "/Cards match/Images/blank.png")
             carta.setAttribute("data-id", i) // this way the id of each img will be 0,1,2,3....
-            carta.addEventListener("click", flipCard)
+            carta.addEventListener("click", flipCardBew)
             grid.appendChild(carta)
         }
     }
@@ -271,7 +271,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    createBoard()
+    createBoard();
 
 })
 
@@ -282,9 +282,11 @@ const input = document.querySelector(".input");
     function updateBody() {
         if (input.checked) {
             body.style.background = "black";
+            createBoardBew();
         }
         else {
             body.style.background = "rgb(112, 112, 197)";
+            createBoard();
         }
     }
     
