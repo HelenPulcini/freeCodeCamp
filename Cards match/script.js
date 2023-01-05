@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     ]
 
-    const cardArrayBew = [  //all card objects are in here in pairs
+    const cardArrayBeW = [  //all card objects are in here in pairs
         {
             card: "clover",
             img: "/Cards match/Images/B&W/clover.png"
@@ -188,7 +188,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return Math.random() - 0.5
     })
 
-    cardArrayBew.sort(function () {
+    cardArrayBeW.sort(function () {
         return Math.random() - 0.5
     })
 
@@ -208,7 +208,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
     function createBoardBew() {
-        for (let i = 0; i < cardArrayBew.length; i++) {
+        for (let i = 0; i < cardArrayBeW.length; i++) {
             const carta = document.createElement("img")
             carta.setAttribute("src", "/Cards match/Images/blank.png")
             carta.setAttribute("data-id", i) // this way the id of each img will be 0,1,2,3....
@@ -229,9 +229,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function flipCardBew() {
         const cardId = this.getAttribute("data-id") // 'this.' refers to whatever you click
-        carteChosen.push(cardArrayBew[cardId].card) // this gets the name of the cards we've given in the cardArray (which we called card :"") and pushes it in the empty carteChosen array
+        carteChosen.push(cardArrayBeW[cardId].card) // this gets the name of the cards we've given in the cardArray (which we called card :"") and pushes it in the empty carteChosen array
         carteChosenIds.push(cardId) // this is another empty array in which we will store the ids (0,1,2...) which we will use to check for match
-        this.setAttribute("src", cardArrayBew[cardId].img)
+        this.setAttribute("src", cardArrayBeW[cardId].img)
         if (carteChosen.length === 2) {  //when 2 cards are in the array we want the checkForMatch function to kick in
             setTimeout(checkForMatch, 500)
         }
@@ -273,7 +273,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     createBoard();
 
-})
+})           
 
 const input = document.querySelector(".input");
     const body = document.querySelector("body")
@@ -300,5 +300,4 @@ const input = document.querySelector(".input");
     }
 
 updateBody();
-
 
